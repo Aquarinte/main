@@ -18,7 +18,6 @@ import seedu.address.model.appointment.UniqueAppointmentList;
 import seedu.address.model.appointment.exceptions.AppointmentDependencyNotEmptyException;
 import seedu.address.model.appointment.exceptions.AppointmentNotFoundException;
 import seedu.address.model.appointment.exceptions.DuplicateAppointmentException;
-import seedu.address.model.appointment.exceptions.DuplicateDateTimeException;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.UniquePersonList;
 import seedu.address.model.person.exceptions.DuplicateNricException;
@@ -77,8 +76,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         this.tags.setTags(tags);
     }
 
-    public void setAppointments(List<Appointment> appointments)
-            throws DuplicateAppointmentException, DuplicateDateTimeException {
+    public void setAppointments(List<Appointment> appointments) throws DuplicateAppointmentException {
         this.appointments.setAppointments(appointments);
     }
 
@@ -111,8 +109,6 @@ public class AddressBook implements ReadOnlyAddressBook {
         try {
             setAppointments(syncedAppointmentList);
         } catch (DuplicateAppointmentException dae) {
-            throw new AssertionError("AddressBook should not have duplicate appointments.");
-        } catch (DuplicateDateTimeException ddte) {
             throw new AssertionError("AddressBook should not have appointments on the same slot");
         }
 
@@ -173,7 +169,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      *
      * @throws DuplicateAppointmentException if an equivalent person already exists.
      */
-    public void addAppointment(Appointment a) throws DuplicateAppointmentException, DuplicateDateTimeException {
+    public void addAppointment(Appointment a) throws DuplicateAppointmentException {
         Appointment appointment = syncWithAppointmentMasterTagList(a);
         // TODO: the tags master list will be updated even though the below line fails.
         // This can cause the tags master list to have additional tags that are not tagged to any appointment
@@ -323,7 +319,38 @@ public class AddressBook implements ReadOnlyAddressBook {
      * @throws PetDependencyNotEmptyException if the {@code key} still contains pet patients it is tied to.
      */
     public boolean removePerson(Person key) throws PersonNotFoundException, PetDependencyNotEmptyException {
-        petPatientDependenciesExist(key);
+        for (PetPatient petPatient : petPatients) {
+            if (petPatient.getOwner().equals(key.getNric())) {
+                throw new PetDependencyNotEmptyException();
+            }
+        }
+
+        if (persons.remove(key)) {
+            removeUselessTags();
+            return true;
+        } else {
+            throw new PersonNotFoundException();
+        }
+    }
+
+    /**
+     * Forcefully removes {@code key} and all dependencies from this {@code AddressBook}.
+     *
+     * @throws PersonNotFoundException if the {@code key} is not in this {@code AddressBook}.
+     */
+    public boolean removeForcePerson(Person key) throws PersonNotFoundException {
+        List<PetPatient> petPatientArrayList = new ArrayList<>();
+        for (PetPatient petPatient : petPatients) {
+            if (petPatient.getOwner().equals(key.getNric())) {
+                petPatientArrayList.add(petPatient);
+            }
+        }
+
+        for (PetPatient petPatient : petPatientArrayList) {
+            removeAllAppointments(petPatient);
+        }
+
+        removeAllPetPatient(key);
 
         if (persons.remove(key)) {
             removeUselessTags();
@@ -355,7 +382,12 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean removePetPatient(PetPatient key)
             throws PetPatientNotFoundException, AppointmentDependencyNotEmptyException {
-        appointmentDependenciesExist(key);
+        for (Appointment appointment : appointments) {
+            if (appointment.getPetPatientName().equals(key.getName())
+                    && appointment.getOwnerNric().equals(key.getOwner())) {
+                throw new AppointmentDependencyNotEmptyException();
+            }
+        }
 
         if (petPatients.remove(key)) {
             removeUselessTags();
@@ -366,53 +398,27 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
-     * Forcefully removes all pet patients dependencies on {@code key} from this {@code AddressBook}.
+     * Removes all pet patients belonging to {@code key} from this {@code AddressBook}.
      */
-
-    public List<PetPatient> removeAllPetPatientDependencies(Person key) {
+    private void removeAllPetPatient(Person key) {
         Iterator<PetPatient> petPatientIterator = petPatients.iterator();
-        List<PetPatient> petPatientsDeleted = new ArrayList<>();
+
         while (petPatientIterator.hasNext()) {
             PetPatient petPatient = petPatientIterator.next();
 
             if (petPatient.getOwner().equals(key.getNric())) {
-                petPatientsDeleted.add(petPatient);
                 petPatientIterator.remove();
             }
         }
-        return petPatientsDeleted;
     }
 
     /**
-     * @throws AppointmentDependencyNotEmptyException if appointment dependencies of {@code key}
-     * still exists in {@code AddressBook}.
-     */
-    private void appointmentDependenciesExist(PetPatient key) throws AppointmentDependencyNotEmptyException {
-        for (Appointment appointment : appointments) {
-            if (appointment.getPetPatientName().equals(key.getName())
-                    && appointment.getOwnerNric().equals(key.getOwner())) {
-                throw new AppointmentDependencyNotEmptyException();
-            }
-        }
-    }
-
-    /**
-     * @throws PetDependencyNotEmptyException if pet dependencies of {@code key} still exists in {@code AddressBook}.
-     */
-    private void petPatientDependenciesExist(Person key) throws PetDependencyNotEmptyException {
-        for (PetPatient petPatient : petPatients) {
-            if (petPatient.getOwner().equals(key.getNric())) {
-                throw new PetDependencyNotEmptyException();
-            }
-        }
-    }
-
-    /**
-     * Forcefully removes all dependencies relying on pet patient {@code key} from this {@code AddressBook}.
+     * Forcefully removes pet patient {@code key} from this {@code AddressBook}.
      *
+     * @throws PetPatientNotFoundException if the {@code key} is not in this {@code AddressBook}.
      */
-    public List<Appointment> removeAllAppointmentDependencies(PetPatient key) {
-        List<Appointment> appointmentsDeleted = new ArrayList<>();
+    public boolean removeForcePetPatient(PetPatient key)
+            throws PetPatientNotFoundException {
         Iterator<Appointment> appointmentIterator = appointments.iterator();
 
         while (appointmentIterator.hasNext()) {
@@ -420,12 +426,16 @@ public class AddressBook implements ReadOnlyAddressBook {
 
             if (appointment.getPetPatientName().equals(key.getName())
                     && appointment.getOwnerNric().equals(key.getOwner())) {
-                appointmentsDeleted.add(appointment);
                 appointmentIterator.remove();
             }
         }
 
-        return appointmentsDeleted;
+        if (petPatients.remove(key)) {
+            removeUselessTags();
+            return true;
+        } else {
+            throw new PetPatientNotFoundException();
+        }
     }
 
     //// tag-level operations
