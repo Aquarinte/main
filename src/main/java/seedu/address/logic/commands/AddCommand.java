@@ -17,7 +17,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.appointment.Appointment;
 import seedu.address.model.appointment.exceptions.DuplicateAppointmentException;
-import seedu.address.model.appointment.exceptions.DuplicateDateTimeException;
 import seedu.address.model.person.Nric;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.exceptions.DuplicateNricException;
@@ -115,7 +114,6 @@ public class AddCommand extends UndoableCommand {
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in Medeina.";
     public static final String MESSAGE_DUPLICATE_NRIC = "This is already someone with this NRIC.";
     public static final String MESSAGE_DUPLICATE_APPOINTMENT = "This particular appointment already exists in Medeina.";
-    public static final String MESSAGE_DUPLICATE_DATETIME = "This date time is already taken by another appointment.";
     public static final String MESSAGE_DUPLICATE_PET_PATIENT = "This pet patient already exists in Medeina";
     public static final String MESSAGE_INVALID_NRIC = "The specified NRIC does not belong to anyone in Medeina."
             + " Please add a new person.";
@@ -206,8 +204,6 @@ public class AddCommand extends UndoableCommand {
             throw new CommandException(MESSAGE_DUPLICATE_PET_PATIENT);
         } catch (DuplicateAppointmentException e) {
             throw new CommandException(MESSAGE_DUPLICATE_APPOINTMENT);
-        } catch (DuplicateDateTimeException e) {
-            throw new CommandException(MESSAGE_DUPLICATE_DATETIME);
         }
     }
 
@@ -232,8 +228,7 @@ public class AddCommand extends UndoableCommand {
     /**
      * Add a new appointment for an existing pet patient under an existing person.
      */
-    private CommandResult addNewAppt()
-            throws CommandException, DuplicateAppointmentException, DuplicateDateTimeException {
+    private CommandResult addNewAppt() throws CommandException, DuplicateAppointmentException {
         Person owner = getPersonWithNric();
         PetPatient pet = getPetPatientWithNricAndName();
         if (owner != null) {
@@ -258,7 +253,7 @@ public class AddCommand extends UndoableCommand {
      * (New appointment for the new patient under a new person).
      */
     private CommandResult addAllNew() throws DuplicatePersonException, DuplicateNricException,
-            DuplicatePetPatientException, DuplicateAppointmentException, DuplicateDateTimeException {
+            DuplicatePetPatientException, DuplicateAppointmentException {
         model.addPerson(toAddOwner);
         model.addPetPatient(toAddPet);
         model.addAppointment(toAddAppt);
