@@ -3,7 +3,6 @@ package seedu.address.model;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.List;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -17,7 +16,6 @@ import seedu.address.model.appointment.Appointment;
 import seedu.address.model.appointment.exceptions.AppointmentDependencyNotEmptyException;
 import seedu.address.model.appointment.exceptions.AppointmentNotFoundException;
 import seedu.address.model.appointment.exceptions.DuplicateAppointmentException;
-import seedu.address.model.appointment.exceptions.DuplicateDateTimeException;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.exceptions.DuplicateNricException;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
@@ -83,6 +81,13 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
+    public synchronized void deleteForcePerson(Person target)
+            throws PersonNotFoundException {
+        addressBook.removeForcePerson(target);
+        indicateAddressBookChanged();
+    }
+
+    @Override
     public synchronized void addPerson(Person person) throws DuplicatePersonException, DuplicateNricException {
         addressBook.addPerson(person);
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
@@ -97,17 +102,10 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
-    public synchronized List<PetPatient> deletePetPatientDependencies(Person target) {
-        List<PetPatient> petPatients = addressBook.removeAllPetPatientDependencies(target);
+    public synchronized void deleteForcePetPatient(PetPatient target)
+            throws PetPatientNotFoundException {
+        addressBook.removeForcePetPatient(target);
         indicateAddressBookChanged();
-        return petPatients;
-    }
-
-    @Override
-    public synchronized List<Appointment> deleteAppointmentDependencies(PetPatient target) {
-        List<Appointment> dependenciesDeleted = addressBook.removeAllAppointmentDependencies(target);
-        indicateAddressBookChanged();
-        return dependenciesDeleted;
     }
 
     @Override
@@ -133,8 +131,7 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
-    public synchronized void addAppointment(Appointment appointment)
-            throws DuplicateAppointmentException, DuplicateDateTimeException {
+    public synchronized void addAppointment(Appointment appointment) throws DuplicateAppointmentException {
         addressBook.addAppointment(appointment);
         updateFilteredAppointmentList(PREDICATE_SHOW_ALL_APPOINTMENTS);
         indicateAddressBookChanged();
