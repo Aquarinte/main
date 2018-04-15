@@ -5,43 +5,52 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>AddressBook Level 4 - User Guide</title>
+<title>Medeina - User Guide</title>
 <link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>AddressBook Level 4 - User Guide</h1>
+<h1>Medeina - User Guide</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team F14-B2</code>      Since: <code>Mar 2018</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#what-is-medeina">1.1. What is Medeina</a></li>
+<li><a href="#using-this-guide">1.2. Using this Guide</a></li>
+</ul>
+</li>
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">3.7. Selecting a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.13. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#viewing-help-code-help-code-or-code-h-code">3.1. Viewing help : <code>help</code> or <code>h</code></a></li>
+<li><a href="#adding-a-contact-pet-patient-or-appointment-code-add-code-or-code-a-code-code-since-v1-2-code">3.2. Adding a contact, pet patient or appointment : <code>add</code> or <code>a</code> <code>[Since v1.2]</code></a></li>
+<li><a href="#listing-all-contacts-code-list-code-or-code-ls-code">3.3. Listing all contacts : <code>list</code> or <code>ls</code></a></li>
+<li><a href="#editing-a-contact-code-edit-code-or-code-ed-code">3.4. Editing a contact : <code>edit</code> or <code>ed</code></a></li>
+<li><a href="#finding-contacts-by-name-code-find-code-or-code-f-code">3.5. Finding contacts by name: <code>find</code> or <code>f</code></a></li>
+<li><a href="#deleting-a-owner-pet-patient-or-appointment-code-delete-code-or-code-d-code-code-since-v1-3-code">3.6. Deleting a owner, pet patient or appointment : <code>delete</code> or <code>d</code> <code>[Since v1.3]</code></a></li>
+<li><a href="#selecting-a-contact-code-select-code-or-code-s-code">3.7. Selecting a contact : <code>select</code> or <code>s</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code-or-code-his-code">3.8. Listing entered commands : <code>history</code> or <code>his</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code-or-code-ud-code">3.9. Undoing previous command : <code>undo</code> or <code>ud</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code-or-code-rd-code">3.10. Redoing the previously undone command : <code>redo</code> or <code>rd</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code-or-code-cls-code">3.11. Clearing all entries : <code>clear</code> or <code>cls</code></a></li>
+<li><a href="#changing-theme-code-theme-code-or-code-t-code-code-since-v1-1-code">3.12. Changing theme : <code>theme</code> or <code>t</code> <code>[Since v1.1]</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code-or-code-q-code">3.13. Exiting the program : <code>exit</code> or <code>q</code></a></li>
+<li><a href="#data-saving">3.14. Data saving</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#creating-other-user-profiles-code-coming-in-v2-0-code">3.16. Creating other user profiles <code>[coming in v2.0]</code></a></li>
+<li><a href="#setting-user-permissions-code-coming-in-v2-0-code">3.17. Setting user permissions <code>[coming in v2.0]</code></a></li>
+<li><a href="#supporting-multiple-users-code-coming-in-v2-0-code">3.18. Supporting multiple users <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -53,17 +62,41 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 4 (AB4) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB4 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB4 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>Are you a veterinarian or a veterinary assistant in need of help to manage growing number of contacts, never-ending list of pet patients and floods of appointments? Are you having nightmares over the sheer amount of data to catalogue? Are you struggling to find the right pet patient&#8217;s details and owner&#8217;s contact amongst a plethora of paper records for each of your appointment?</p>
+</div>
+<div class="paragraph">
+<p>Medeina is finally here to solve your problems.</p>
+</div>
+<div class="sect2">
+<h3 id="what-is-medeina"><a class="link" href="#what-is-medeina">1.1. What is Medeina</a></h3>
+<div class="paragraph">
+<p>Medeina is a specialized desktop application designed to provide veterinarians and their assistants with better management over contacts, pet patient details and appointments. It serves as both an address book and a task manager.</p>
+</div>
+<div class="paragraph">
+<p>If you are comfortable working with a Command Line Interface (CLI), then Medeina is perfect for you. Nevertheless, Medeina keeps to simple and intuitive commands that even those who are unfamiliar with CLI can pick it up easily. Medeina also comes with a clean and organized Graphical User Interface (GUI) to present information in the most optimal way for your perusal.</p>
+</div>
+<div class="paragraph">
+<p>Medeina, your all-in-one solution to curb the data nightmare.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-this-guide"><a class="link" href="#using-this-guide">1.2. Using this Guide</a></h3>
+<div class="paragraph">
+<p>This document provides detailed information pertaining to Medeina&#8217;s set-up and usage instructions for the various features it offers. The user guide can be accessed any time through the <code>help</code> command in Medeina.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>To successsfully install and run Medeina, you need to:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java version <code>1.8.0_60</code> or later installed in your Computer.</p>
+<p>Ensure that you have Java version <code>1.8.0_60</code> or later installed on your Computer.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -79,10 +112,10 @@ This app will not work with earlier versions of Java 8.
 </div>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level4/releases">here</a>.</p>
+<p>Download the latest <code>medeina.jar</code> <a href="https://github.com/CS2103JAN2018-F14-B2/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for Medeina.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -104,7 +137,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all contacts</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 nr/S1234567G</code> : adds a contact named <code>John Doe</code> to Medeina&#8217;s address book.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
@@ -128,12 +161,15 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><strong>Command Format</strong></p>
+<p><strong>Command format used in Medeina :</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add <strong>-o</strong> n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add <strong>-o</strong> n/John Doe</code>.</p>
+</li>
+<li>
+<p>Characters in <strong>bold</strong> are options to be specified by the user to execute variants of a command e.g. in <code>add <strong>-p</strong> n/NAME</code>, <strong>-p</strong> denotes to add a pet patient.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
@@ -144,21 +180,71 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
 </li>
+<li>
+<p>Shorthand equivalent alias is available for all commands to simplify execution of commands.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command autocomplete in Medeina :</strong> <code>[Since v1.3]</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/autocomplete.png" alt="autocomplete" width="500">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Medeina supports autocomplete for command words, options and prefixes.</p>
+</li>
+<li>
+<p>You will also be shown a list of existing NRICs and a list of existing pet patients names when you need to reference them in <code><strong>-o</strong> nr/OWNER_NRIC</code> and <code><strong>-p</strong> n/PET_PATIENT_NAME</code> respectively.</p>
+</li>
+<li>
+<p>You can use <kbd>Up</kbd> and <kbd>Down</kbd>, or <kbd>Tab</kbd> to traverse through the autocomplete suggestions in the pop-up context menu.</p>
+</li>
+<li>
+<p>Press <kbd>Enter</kbd> to select an autocomplete suggestion on the pop-up context menu.</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code-or-code-h-code"><a class="link" href="#viewing-help-code-help-code-or-code-h-code">3.1. Viewing help : <code>help</code> or <code>h</code></a></h3>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p>If you are feeling lost, enter <code>help</code> or <code>h</code> in Medeina&#8217;s command box, or press <kbd>Enter</kbd> to bring up this user guide document in a pop-up window.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
+<h3 id="adding-a-contact-pet-patient-or-appointment-code-add-code-or-code-a-code-code-since-v1-2-code"><a class="link" href="#adding-a-contact-pet-patient-or-appointment-code-add-code-or-code-a-code-code-since-v1-2-code">3.2. Adding a contact, pet patient or appointment : <code>add</code> or <code>a</code> <code>[Since v1.2]</code></a></h3>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>You can use the <code>add</code> or <code>a</code> to do the following :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">To add a new contact</dt>
+<dd>
+<p><code>add <strong>-o</strong> n/CONTACT_NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS nr/NRIC [t/TAG]&#8230;&#8203;</code></p>
+</dd>
+<dt class="hdlist1">To add a new pet patient under an existing contact (owner)</dt>
+<dd>
+<p><code>add <strong>-p</strong> n/PET_PATIENT_NAME s/SPECIES b/BREED c/COLOR bt/BLOOD_TYPE [t/TAG]&#8230;&#8203; <strong>-o</strong> nr/OWNER_NRIC</code></p>
+</dd>
+<dt class="hdlist1">To add a new appointment for an existing pet patient</dt>
+<dd>
+<p><code>add <strong>-a</strong> d/YYYY-MM-DD HH:MM r/REMARK [t/TAG]&#8230;&#8203; <strong>-o</strong> nr/OWNER_NRIC <strong>-p</strong> n/PET_PATIENT_NAME</code></p>
+</dd>
+<dt class="hdlist1">To add a new appointment for a new pet patient under a new owner</dt>
+<dd>
+<p><code>add <strong>-o</strong> n/CONTACT_NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS nr/NRIC [t/TAG]&#8230;&#8203; <strong>-p</strong> n/PET_PATIENT_NAME s/SPECIES b/BREED c/COLOR bt/BLOOD_TYPE [t/TAG]&#8230;&#8203; <strong>-a</strong> d/YYYY-MM-DD HH:MM r/REMARK [t/TAG]&#8230;&#8203;</code></p>
+</dd>
+</dl>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -167,7 +253,19 @@ Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags (including 0)
+Contact, pet patient and appointment can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Do not leave REMARK empty. You can specify '-' or 'nil' if there is no remark for the appointment.
 </td>
 </tr>
 </table>
@@ -178,33 +276,53 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>add <strong>-o</strong> n/Viktor Nikiforov p/91237890 e/v_nikiforov@gmail.com a/27 Skating Place nr/F0012345Z</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>add <strong>-p</strong> n/Makkachin s/dog b/poodle c/brown bt/O <strong>-o</strong> nr/F0012345Z</code></p>
+</li>
+<li>
+<p><code>add <strong>-a</strong> d/2018-05-27 14:30 r/had poor appetite the last 3 days t/vaccination t/checkup <strong>-o</strong> nr/F0012345Z <strong>-p</strong> n/Makkachin</code></p>
+</li>
+<li>
+<p><code>add <strong>-o</strong> n/Jacqueline p/65123456 e/jacq@gmail.com a/96 Computing Drive, #02-03 nr/S1234567G <strong>-p</strong> n/jewel s/cat b/persian c/calico bt/AB <strong>-a</strong> d/2018-12-31 12:30 r/nil t/surgery t/sterilization</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="listing-all-contacts-code-list-code-or-code-ls-code"><a class="link" href="#listing-all-contacts-code-list-code-or-code-ls-code">3.3. Listing all contacts : <code>list</code> or <code>ls</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Medeina will show a list of all stored contacts if you enter <code>list</code> or <code>ls</code> in the command box.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
+<h3 id="editing-a-contact-code-edit-code-or-code-ed-code"><a class="link" href="#editing-a-contact-code-edit-code-or-code-ed-code">3.4. Editing a contact : <code>edit</code> or <code>ed</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Use the following command format to:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Edit an existing contact</dt>
+<dd>
+<p><code>edit <strong>-o</strong> INDEX [n/CONTACT_NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [nr/NRIC] [t/TAG]&#8230;&#8203;</code></p>
+</dd>
+<dt class="hdlist1">Edit an existing pet patient</dt>
+<dd>
+<p><code>edit <strong>-p</strong> INDEX [n/PET_PATIENT_NAME] [s/SPECIES] [b/BREED] [c/COLOR] [bt/BLOOD_TYPE] [nr/OWNER_NRIC] [t/TAG]&#8230;&#8203;</code></p>
+</dd>
+<dt class="hdlist1">Edit an existing appointment</dt>
+<dd>
+<p><code>edit <strong>-a</strong> INDEX [d/YYYY-MM-DD HH:MM] [r/REMARK] [nr/OWNER_NRIC] [n/PET_PATIENT_NAME] [t/TAG]&#8230;&#8203;</code></p>
+</dd>
+</dl>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>The command edits the contact / pet patient at the specified <code>INDEX</code>. The index refers to the index number shown in the latest contact / pet patient listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -213,10 +331,10 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the contact / pet patient will be removed i.e adding of tags is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all of the contact&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
 </li>
 </ul>
 </div>
@@ -228,21 +346,28 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><code>edit <strong>-o</strong> 1 p/91234567 e/johndoe@example.com</code><br>
+Medeina will edit the phone number and email address of the 1st contact to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><code>edit <strong>-o</strong> 2 n/Betsy Crower t/</code> or <code>e <strong>-o</strong> 2 n/Betsy Crower t/</code><br>
+Medeina will edit the name of the 2nd contact to be <code>Betsy Crower</code> and clears all existing tags.</p>
+</li>
+<li>
+<p><code>edit <strong>-p</strong> 2 n/jewel baby t/</code> or <code>e <strong>-p</strong> 2 n/jewel baby t/</code><br>
+Medeina will edit the name of the 2nd pet patient to be <code>jewel baby</code> and clears all existing tags.</p>
+</li>
+<li>
+<p><code>edit <strong>-a</strong> 3 d/2018-06-04</code><br>
+Medeina will edit the date and time of the 3rd appointment to be <code>2018-06-04</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<h3 id="finding-contacts-by-name-code-find-code-or-code-f-code"><a class="link" href="#finding-contacts-by-name-code-find-code-or-code-f-code">3.5. Finding contacts by name: <code>find</code> or <code>f</code></a></h3>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>To retrieve contacts with names that contain any of the specified keywords, enter <code>find KEYWORD [MORE_KEYWORDS]</code> or <code>f KEYWORD [MORE_KEYWORDS]</code> in the command box.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -261,7 +386,7 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Contacts matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
 </li>
 </ul>
 </div>
@@ -273,38 +398,81 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p>Type in <code>f John</code><br>
+Medeina will return <code>john</code> and <code>John Doe</code></p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p>Type in <code>find Betsy Tim John</code><br>
+Medeina will return any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-owner-pet-patient-or-appointment-code-delete-code-or-code-d-code-code-since-v1-3-code"><a class="link" href="#deleting-a-owner-pet-patient-or-appointment-code-delete-code-or-code-d-code-code-since-v1-3-code">3.6. Deleting a owner, pet patient or appointment : <code>delete</code> or <code>d</code> <code>[Since v1.3]</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
+<p>Use the following command format to:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Delete an existing owner</dt>
+<dd>
+<p><code>delete <strong>-o</strong> INDEX</code></p>
+</dd>
+<dt class="hdlist1">Forcefully deleting an existing owner</dt>
+<dd>
+<p><code>delete <strong>-fo</strong> INDEX</code></p>
+</dd>
+<dt class="hdlist1">Delete an existing pet patient</dt>
+<dd>
+<p><code>delete <strong>-p</strong> INDEX</code></p>
+</dd>
+<dt class="hdlist1">Forcefully deleting an existing pet patient</dt>
+<dd>
+<p><code>delete <strong>-fp</strong> INDEX</code></p>
+</dd>
+<dt class="hdlist1">Delete an existing appointment</dt>
+<dd>
+<p><code>delete <strong>-a</strong> INDEX</code></p>
+</dd>
+</dl>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
+<p>The command deletes the contact, pet patient or appointment at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the most recent listing.</p>
+<p>The commands -o and -p will not run if there are dependencies that rely on it. To forcefully delete, use the -fo and -fp options.</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Upon a forceful delete of an owner, all appointments and pet patients binded to the owner are automatically deleted as well.</p>
+</li>
+<li>
+<p>Upon a forceful delete of a pet patient, all appointments binded to the pet patient are automatically deleted as well.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the most recent listing, provided by the <code>list</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The index <strong>must be a positive integer</strong> and should not be <strong>invalid</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -312,40 +480,56 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
+<p>Type in <code>list -o</code><br>
+<code>delete -o 2</code><br>
+Medeina will deletes the 2nd owner in Medeina&#8217;s address book only if there are no pet patients and appointments binded to that owner.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+<p>Type in <code>list -o</code><br>
+<code>delete -fo 2</code><br>
+Medeina will deletes the 2nd owner in Medeina&#8217;s address book, and all pet patients and appointments binded to that owner</p>
+</li>
+<li>
+<p>Type in <code>find -o Betsy</code><br>
+<code>d -o 1</code><br>
+Medeina will delete the 1st contact in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.7. Selecting a person : <code>select</code></a></h3>
+<h3 id="selecting-a-contact-code-select-code-or-code-s-code"><a class="link" href="#selecting-a-contact-code-select-code-or-code-s-code">3.7. Selecting a contact : <code>select</code> or <code>s</code></a></h3>
 <div class="paragraph">
-<p>Selects the person identified by the index number used in the last person listing.<br>
-Format: <code>select INDEX</code></p>
+<p>To select the contact identified by the index number used in the last person listing.<br>
+The command format should be: <code>select INDEX</code> or <code>s INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>The command selects the contact and lists the appointments that she / he has made with the vet at the specified <code>INDEX</code>.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the most recent listing.</p>
 </li>
-<li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -353,23 +537,23 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
+<p>Type in <code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd person in the address book.</p>
+Medeina will select the 2nd contact in Medeina&#8217;s address book.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>select 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command.</p>
+<p>Type in <code>find Betsy</code><br>
+<code>s 1</code><br>
+Medeina will select the 1st contact in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code-or-code-his-code"><a class="link" href="#listing-entered-commands-code-history-code-or-code-his-code">3.8. Listing entered commands : <code>history</code> or <code>his</code></a></h3>
 <div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format: <code>history</code></p>
+<p>To list all the commands that you have entered in reverse chronological order.<br>
+The command format should be: <code>history</code> or <code>his</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -387,10 +571,10 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code-or-code-ud-code"><a class="link" href="#undoing-previous-command-code-undo-code-or-code-ud-code">3.9. Undoing previous command : <code>undo</code> or <code>ud</code></a></h3>
 <div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
+<p>To restore Medeina to the state before the previous <em>undoable</em> command was executed.<br>
+The command format should be: <code>undo</code> or <code>ud</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -400,7 +584,7 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Undoable commands: those commands that modify Medeina&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
 </div>
 </td>
 </tr>
@@ -412,30 +596,30 @@ Format: <code>undo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
+<p>Type in <code>delete 1</code><br>
 <code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<code>ud</code> (The command will reverses the <code>delete 1</code> command)<br></p>
 </li>
 <li>
-<p><code>select 1</code><br>
+<p>Type in <code>select 1</code><br>
 <code>list</code><br>
 <code>undo</code><br>
 The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p>Type in <code>delete 1</code><br>
 <code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<code>undo</code> (The command reverses the <code>clear</code> command)<br>
+<code>ud</code> (The command reverses the <code>delete 1</code> command)<br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code-or-code-rd-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code-or-code-rd-code">3.10. Redoing the previously undone command : <code>redo</code> or <code>rd</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>To reverse the most recent <code>undo</code> command.<br>
+The command format should be: <code>redo</code> or <code>rd</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -443,51 +627,167 @@ Format: <code>redo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<p>Type in <code>delete 1</code><br>
+<code>undo</code> (The command reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (The command reapplies the <code>delete 1</code> command)<br></p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p>Type in <code>delete 1</code><br>
 <code>redo</code><br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p>Type in <code>delete 1</code><br>
 <code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<code>ud</code> (The command reverses the <code>clear</code> command)<br>
+<code>ud</code> (The command reverses the <code>delete 1</code> command)<br>
+<code>rd</code> (The command reapplies the <code>delete 1</code> command)<br>
+<code>rd</code> (The command reapplies the <code>clear</code> command)<br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code-or-code-cls-code"><a class="link" href="#clearing-all-entries-code-clear-code-or-code-cls-code">3.11. Clearing all entries : <code>clear</code> or <code>cls</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>To clear all entries from Medeina&#8217;s address book.<br>
+The command format should be: <code>clear</code> or <code>cls</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This command <strong>cannot</strong> be undone. Please be certain that you have backed up your data (which is located in the <code>data</code> folder) before executing this command!</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></h3>
+<h3 id="changing-theme-code-theme-code-or-code-t-code-code-since-v1-1-code"><a class="link" href="#changing-theme-code-theme-code-or-code-t-code-code-since-v1-1-code">3.12. Changing theme : <code>theme</code> or <code>t</code> <code>[Since v1.1]</code></a></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>To change Medeina&#8217;s current theme to another pre-loaded theme.<br>
+The command format should be: <code>theme THEME_NAME</code> or <code>t THEME_NAME</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>THEME_NAME</code> is case insensitive. e.g <code>DARK</code> will match <code>dark</code></p>
+</li>
+<li>
+<p>Available themes: <code>dark</code> and <code>light</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type in <code>theme dark</code><br>
+Medeina will change to dark theme.</p>
+</li>
+<li>
+<p>Type in <code>t light</code><br>
+Medeina will change to light theme.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<h3 id="exiting-the-program-code-exit-code-or-code-q-code"><a class="link" href="#exiting-the-program-code-exit-code-or-code-q-code">3.13. Exiting the program : <code>exit</code> or <code>q</code></a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+<p>You can easily exit Medeina on the command line without having to move your mouse.<br>
+The command format should be: <code>exit</code> or <code>q</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="data-saving"><a class="link" href="#data-saving">3.14. Data saving</a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>The data in Medeina is automatically saved to the hard disk after any command that may result in a change in the storage.<br>
+Commands that may result in a change in the storage are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code> or <code>a</code><br>
+This command will add new information into the storage.</p>
+</li>
+<li>
+<p><code>edit</code> or <code>ed</code><br>
+This command will update information in the storage.</p>
+</li>
+<li>
+<p><code>delete</code> or <code>d</code><br>
+This command will remove information in the storage.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You do not need to manually save the data.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.15. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Coming v2.0, the data you have will be automatically encrypted after commands that may change the storage, so that you do not have to worry about it being stolen.<br>
+You do not need to manually encrypt your data files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-other-user-profiles-code-coming-in-v2-0-code"><a class="link" href="#creating-other-user-profiles-code-coming-in-v2-0-code">3.16. Creating other user profiles <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Coming v2.0, Medeina will have user accounts, so that veterinarians and their assistants can collaborate on the same computer, but at the same time keep their information private to themselves.<br>
+This command will be added when it is released.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-user-permissions-code-coming-in-v2-0-code"><a class="link" href="#setting-user-permissions-code-coming-in-v2-0-code">3.17. Setting user permissions <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Coming v2.0, Medeina will have user permissions, to ensure that protected information is not easily changed by other staff. There will be an administrator role to gain total access in the application.<br></p>
+</div>
+<div class="paragraph">
+<p>Information that vet assistants should not change:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can add new information (contacts, pet patients, appointments) to the application, but you should not be able to delete it.</p>
+</li>
+<li>
+<p>You can see the medical histories of pet patients but should not modify it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Information that vets should not change:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You should not change information belonging to other vets in the application without permission.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The command will be added when it is released.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="supporting-multiple-users-code-coming-in-v2-0-code"><a class="link" href="#supporting-multiple-users-code-coming-in-v2-0-code">3.18. Supporting multiple users <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Coming v2.0, Medeina can be used concurrently on different systems. The data will be synced over an internet connection. This allow Veterinarians and their assistants to access Medeina simultaneously in different rooms, making it easier to collaborate with others.<br>
+The command will be added when it is released.</p>
 </div>
 </div>
 </div>
@@ -497,52 +797,56 @@ There is no need to save manually.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Medeina folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The following is a summary of all commands available in Medeina:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p><strong>Add</strong> <code>add</code> or <code>a</code> with options <strong>-o</strong>, <strong>-p</strong> and <strong>-a</strong></p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p><strong>Clear</strong> : <code>clear</code> or <code>cls</code></p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p><strong>Delete</strong> : <code>delete INDEX</code> or <code>d INDEX</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p><strong>Edit</strong> : <code>edit INDEX [PREFIX/ INFO]</code> or <code>e INDEX [PREFIX/ INFO]</code> with options <strong>-o</strong>, <strong>-p</strong> and <strong>-a</strong></p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+<p><strong>Exit</strong> : <code>exit</code> or <code>q</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code> or <code>f KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p><strong>List</strong> : <code>list</code> or <code>ls</code></p>
 </li>
 <li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
+<p><strong>Help</strong> : <code>help</code> or <code>h</code></p>
 </li>
 <li>
-<p><strong>History</strong> : <code>history</code></p>
+<p><strong>Select</strong> : <code>select INDEX</code> or <code>s INDEX</code></p>
 </li>
 <li>
-<p><strong>Undo</strong> : <code>undo</code></p>
+<p><strong>History</strong> : <code>history</code> or <code>his</code></p>
 </li>
 <li>
-<p><strong>Redo</strong> : <code>redo</code></p>
+<p><strong>Undo</strong> : <code>undo</code> or <code>ud</code></p>
+</li>
+<li>
+<p><strong>Redo</strong> : <code>redo</code> or <code>rd</code></p>
+</li>
+<li>
+<p><strong>Change Theme</strong> : <code>theme THEME_NAME</code> or <code>t THEME_NAME</code></p>
 </li>
 </ul>
 </div>
@@ -551,7 +855,7 @@ e.g.<code>select 2</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-02-21 14:13:38 UTC
+Last updated 2018-04-15 16:32:06 UTC
 </div>
 </div>
 </body>
