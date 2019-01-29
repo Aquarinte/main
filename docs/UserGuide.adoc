@@ -738,7 +738,9 @@ Medeina will have support to run concurrently on different systems. The data wil
 *A*: Medeina is developed with the assumption that no pet patients under the same contact will share a name. However, there is a solution for such rare cases. Edit one of the pet patients to a name with a slight variation e.g. "Happy dog" to include species in the name for differentiation, or "Happy 1" to indicate the older pet patient for differentiation.
 
 // end::FAQ[]
+
 {empty} +
+
 // tag::commandsummaryUG[]
 
 == Command Summary
